@@ -1,0 +1,39 @@
+import { connectToMongoDB } from "./config/DB.config.js";
+connectToMongoDB();
+
+
+
+import express from 'express';
+const app = express();
+
+import cors from 'cors';
+app.use(cors());
+
+
+
+
+app.use(express.json());
+
+
+
+
+import userRouter from "./routes/user.route.js";
+
+
+app.use("/users",userRouter);
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.listen(3000, () => {
+  console.log('server is runing on port 3000');
+});
