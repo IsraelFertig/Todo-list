@@ -48,10 +48,11 @@ export const verifyToken = async (req, res, next) => {
 
 export const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
+  max: 50,
   message: {
     status: 429,
     msg: "Too many requests, please try again later.",
   },
-  standardHeaders: true,
-  legacyHeaders: false,
+  standardHeaders: true, 
+  legacyHeaders: false, 
 });
