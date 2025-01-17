@@ -9,11 +9,15 @@ import express from 'express';
 const app = express();
 
 import cors from 'cors';
+import cookieParser from "cookie-parser";
 app.use(cors());
 
 
 
 
+
+
+app.use(cookieParser());
 app.use(express.json());
 
 
